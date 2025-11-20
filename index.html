@@ -21,8 +21,37 @@
             margin: 5px 0;
         }
     </style>
+
+    <script>
+        async function geocodeAddress(address) {
+            const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`;
+            const response = await fetch(url, { headers: { 'User-Agent': 'cobianchi-project' }});
+            const data = await response.json();
+
+            if(data.length > 0){
+                return {
+                    lat: parseFloat(data[0].lat),
+                    lng: parseFloat(data[0].lon)
+                };
+            }
+            return null;
+        }
+    </script>
+
+
 </head>
 <body>
+
+<script>
+let aziende = [];
+let map;
+let markers = [];
+
+async function caricaDati() {
+    const response = await fetch("aziende_cobianchi.json");
+    aziende = await response.json();
+}
+</script>
 
 <h3>Mappa aziende</h3>
 <div id="mappa"></div>
@@ -30,6 +59,15 @@
 <h2>Filtro aziende (OpenStreetMap)</h2>
 <form id="filterForm">
     <select id="citta">
+        <script>
+        let sede = [];
+        console.log(aziende);
+        aziende.forEach(element => {
+            sede.push(element["sede"]);
+        });
+        let uniqueSede = [...new Set(sede)];
+        console.log(uniqueSede);
+        </script>
         <option value="">Verbania</option>
     </select>
 
@@ -50,15 +88,6 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-let aziende = [];
-let map;
-let markers = [];
-
-async function caricaDati() {
-    const response = await fetch("aziende_cobianchi.json");
-    aziende = await response.json();
-}
-
 function initMap() {
     map = L.map('mappa').setView([42.5, 12.5], 6);
 
@@ -111,6 +140,21 @@ document.getElementById("filterForm").addEventListener("submit", e => {
     const filtrate = filtraAziende();
     mostraLista(filtrate);
     aggiungiMarkers(filtrate);
+});
+
+document.getElementById("filterForm").addEventListener("submit", async e => {
+    e.preventDefault();
+
+    const indirizzo = aziende["indirizzo"];
+    const settore = document.getElementById("settore").value;
+
+    // 1) Geocoding
+    const coords = await geocodeAddress(indirizzo);
+
+    if (!coords) {
+        alert("Indirizzo non trovato.");
+        return;
+    }
 });
 
 initMap();

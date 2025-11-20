@@ -24,7 +24,7 @@
  {
    "azienda": "ADI SRL",
    "sede": "Domodossola",
-   "Indirizzo": "Loc. Polveriera, 3 ",
+   "Indirizzo": "Loc. Polveriera, 3",
    "Sito": "https://www.internationalchips.com/it_IT/home",
    "ccnl": "chimica",
    "N° Addetti": "15-50",
@@ -112,7 +112,7 @@
  {
    "azienda": "AMEA SRL",
    "sede": "Villadossola",
-   "Indirizzo": "Via Domodossola, 49 ",
+   "Indirizzo": "Via Domodossola, 49",
    "Sito": "https://www.ameasrl.it/amea.html",
    "ccnl": "metalmecc.",
    "N° Addetti": "15-50",
@@ -376,7 +376,7 @@
  {
    "azienda": "CENTRO MEDICI INSIEME SRL",
    "sede": "Villadossola",
-   "Indirizzo": "Via Roma, 9 ",
+   "Indirizzo": "Via Roma, 9",
    "Sito": "https://www.centromedicinsieme.it/",
    "ccnl": "studi",
    "N° Addetti": "0-15",
@@ -387,7 +387,7 @@
  {
    "azienda": "CERUTTI INOX SRL",
    "sede": "Premosello Chiovenda",
-   "Indirizzo": "Via della Resistenza, 41/a ",
+   "Indirizzo": "Via della Resistenza, 41/a",
    "Sito": "https://www.ceruttinox.it/",
    "ccnl": "metalmecc.",
    "N° Addetti": "15-50",
@@ -651,7 +651,7 @@
  {
    "azienda": "EURIMMOBILIARE COSTRUZIONI RESIDENZIALI S.R.L.",
    "sede": "Gravellona Toce",
-   "Indirizzo": "C.so Roma, 96",
+   "Indirizzo": "corso Roma, 96",
    "Sito": "http://www.eurimmobiliare.it/default.asp",
    "ccnl": "edilizia",
    "N° Addetti": "0-15",
@@ -981,7 +981,7 @@
  {
    "azienda": "LANA EDILIZIA SAS",
    "sede": "Piedimulera",
-   "Indirizzo": "Via Moiachina, 9",
+   "Indirizzo": "Via Moiachina,9",
    "Sito": "https://www.lanaedilizia.com/",
    "ccnl": "terziario",
    "N° Addetti": "0-15",
@@ -1289,7 +1289,7 @@
  {
    "azienda": "RANDSTAD ITALIA S.P.A.",
    "sede": "Gravellona Toce",
-   "Indirizzo": "Corso Roma, 84 ",
+   "Indirizzo": "Corso Roma, 84",
    "Sito": "https://www.randstad.it/trova-filiale/gravellona-toce_1222/",
    "ccnl": "terziario",
    "N° Addetti": "0-15",
@@ -1410,7 +1410,7 @@
  {
    "azienda": "SCF MONTEROSA SRL",
    "sede": "Formazza",
-   "Indirizzo": "Loc. Case Sparse Montepiano, 18 ",
+   "Indirizzo": "Loc. Case Sparse Montepiano, 18",
    "Sito": "https://www.scfmonterosa.it/",
    "ccnl": "impianti fune",
    "N° Addetti": "0-15",
@@ -1443,7 +1443,7 @@
  {
    "azienda": "SIDERTOCE SPA",
    "sede": "Gravellona Toce",
-   "Indirizzo": " Via XX Settembre, 198 ",
+   "Indirizzo": "Via XX Settembre, 198",
    "Sito": "https://www.sidertoce.it/",
    "ccnl": "metalmecc.",
    "N° Addetti": "15-50",
@@ -1476,7 +1476,7 @@
  {
    "azienda": "SPINELLA E TAMINI SRL",
    "sede": "Domodossola",
-   "Indirizzo": "Corso Dissegna, 6/8 ",
+   "Indirizzo": "Corso Dissegna, 6/8",
    "Sito": "https://www.spinellaetamini.it/",
    "ccnl": "assicuraz.",
    "N° Addetti": "0-15",
@@ -1520,7 +1520,7 @@
  {
    "azienda": "STUDIO BROKER & PARTNERS SRL",
    "sede": "Verbania",
-   "Indirizzo": "\nC.so Cairoli, 34",
+   "Indirizzo": "\ncorso Cairoli, 34",
    "Sito": "https://www.polizza.it/",
    "ccnl": "commercio",
    "N° Addetti": "0-15",
