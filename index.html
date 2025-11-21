@@ -6,39 +6,10 @@
     <title>Infografica</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        #mappa {
-            width: 100%;
-            height: 450px;
-            margin-top: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-        #listaAziende li {
-            margin: 5px 0;
-        }
+        body { font-family: Arial; margin: 20px; }
+        #mappa { width: 100%; height: 450px; margin-top: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        #listaAziende li { margin: 5px 0; }
     </style>
-
-    <script>
-        async function geocodeAddress(address) {
-            const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`;
-            const response = await fetch(url, { headers: { 'User-Agent': 'cobianchi-project' }});
-            const data = await response.json();
-
-            if(data.length > 0){
-                return {
-                    lat: parseFloat(data[0].lat),
-                    lng: parseFloat(data[0].lon)
-                };
-            }
-            return null;
-        }
-    </script>
-
-
 </head>
 <body>
 
@@ -47,6 +18,18 @@ let aziende = [];
 let map;
 let markers = [];
 
+// --- GEOCODING ---
+async function geocodeAddress(address) {
+    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`;
+    const response = await fetch(url, { headers: { 'User-Agent': 'cobianchi-project' }});
+    const data = await response.json();
+    if(data.length > 0){
+        return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
+    }
+    return null;
+}
+
+// --- CARICA DATI ---
 async function caricaDati() {
     const response = await fetch("aziende_cobianchi.json");
     aziende = await response.json();
@@ -57,18 +40,10 @@ async function caricaDati() {
 <div id="mappa"></div>
 
 <h2>Filtro aziende (OpenStreetMap)</h2>
+
 <form id="filterForm">
     <select id="citta">
-        <script>
-        let sede = [];
-        console.log(aziende);
-        aziende.forEach(element => {
-            sede.push(element["sede"]);
-        });
-        let uniqueSede = [...new Set(sede)];
-        console.log(uniqueSede);
-        </script>
-        <option value="">Verbania</option>
+        <option value="">Tutte le città</option>
     </select>
 
     <select id="settore">
@@ -88,32 +63,51 @@ async function caricaDati() {
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-function initMap() {
+
+// --- POPOLA SELECT DELLE CITTÀ ---
+function popolaSelectCitta() {
+    const cittaSelect = document.getElementById("citta");
+
+    const uniqueSede = [...new Set(aziende.map(a => a.sede))];
+    uniqueSede.sort((a, b) => a.localeCompare(b));
+    uniqueSede.forEach(s => {
+        if(s !== ""){
+            const opt = document.createElement("option");
+            opt.value = s.toLowerCase();
+            opt.textContent = s;
+            cittaSelect.appendChild(opt);
+        }
+    });
+}
+
+// --- Mappa ---
+async function initMap() {
     map = L.map('mappa').setView([42.5, 12.5], 6);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    caricaDati();
+    await caricaDati();
+    popolaSelectCitta();
 }
 
+// --- FILTRI ---
 function filtraAziende() {
     const citta = document.getElementById("citta").value.toLowerCase();
     const settore = document.getElementById("settore").value.toLowerCase();
 
     return aziende.filter(a => {
-        const macroaree = a.Macroaree.toLowerCase();
+        const macro = a.Macroaree.toLowerCase();
         return (
             (citta === "" || a.sede.toLowerCase().includes(citta)) &&
-            (settore === "" || macroaree.includes(settore))
+            (settore === "" || macro.includes(settore))
         );
     });
 }
 
 function mostraLista(lista) {
-    const listaDiv = document.getElementById("listaAziende");
-    listaDiv.innerHTML = lista.map(a => `
+    document.getElementById("listaAziende").innerHTML = lista.map(a => `
         <li><a href="${a.Sito}" target="_blank">${a.azienda}</a> — ${a.sede}</li>
     `).join("");
 }
@@ -125,9 +119,8 @@ function pulisciMarkers() {
 
 function aggiungiMarkers(lista) {
     pulisciMarkers();
-
     lista.forEach(a => {
-        if(a.lat && a.lng){
+        if (a.lat && a.lng) {
             const marker = L.marker([a.lat, a.lng]).addTo(map);
             marker.bindPopup(`<b>${a.azienda}</b><br><a href='${a.Sito}' target='_blank'>Visita sito</a>`);
             markers.push(marker);
@@ -135,6 +128,7 @@ function aggiungiMarkers(lista) {
     });
 }
 
+// --- EVENTI ---
 document.getElementById("filterForm").addEventListener("submit", e => {
     e.preventDefault();
     const filtrate = filtraAziende();
@@ -142,22 +136,8 @@ document.getElementById("filterForm").addEventListener("submit", e => {
     aggiungiMarkers(filtrate);
 });
 
-document.getElementById("filterForm").addEventListener("submit", async e => {
-    e.preventDefault();
-
-    const indirizzo = aziende["indirizzo"];
-    const settore = document.getElementById("settore").value;
-
-    // 1) Geocoding
-    const coords = await geocodeAddress(indirizzo);
-
-    if (!coords) {
-        alert("Indirizzo non trovato.");
-        return;
-    }
-});
-
 initMap();
 </script>
+
 </body>
 </html>

@@ -124,7 +124,7 @@
    "azienda": "AMIGLIARINI SRL",
    "sede": "Crevoladossola",
    "Indirizzo": "Via Galletti, 6",
-   "Sito": "",
+   "Sito": "https://amigliarini.com/",
    "ccnl": "edilizia",
    "N° Addetti": "15-50",
    "Macroaree": "Altro",
@@ -397,7 +397,7 @@
  },
  {
    "azienda": "COGEIS SPA",
-   "sede": "Quincinetto (To) - Vanzone con San Carlo",
+   "sede": "Quincinetto - Vanzone con San Carlo",
    "Indirizzo": "Frazione Battiggio, 28",
    "Sito": "https://cogeis.it/",
    "ccnl": "edilizia",
@@ -561,9 +561,9 @@
    "provincia": "Verbano-Cusio-ossola"
  },
  {
-   "azienda": "ENEL DISTRIBUZIONE SPA",
+   "azienda": "ENEL",
    "sede": "Verbania",
-   "Indirizzo": "",
+   "Indirizzo": "SARDA PINS SRL",
    "Sito": "https://www.enel.com/it",
    "ccnl": "elettrico",
    "N° Addetti": "50+",
@@ -793,7 +793,7 @@
  },
  {
    "azienda": "GATTONI RUBINETTERIE SPA",
-   "sede": "Alzo (No)",
+   "sede": "Alzo",
    "Indirizzo": "Via Pietro Durio, 5",
    "Sito": "https://gattonirubinetteria.com/",
    "ccnl": "metalmecc.",
@@ -881,7 +881,7 @@
  },
  {
    "azienda": "IMPRESA CAVE DI CORCONIO SRL",
-   "sede": "Orta San Giulio (No)",
+   "sede": "Orta San Giulio",
    "Indirizzo": "Strada Provinciale Vacciago",
    "Sito": "https://www.cavedicorconio.it/",
    "ccnl": "edilizia",
@@ -1354,7 +1354,7 @@
  },
  {
    "azienda": "SAN DOMENICO SKI SRL",
-   "sede": "Varzo (Vb)",
+   "sede": "Varzo",
    "Indirizzo": "",
    "Sito": "https://www.san-domenico.com/it",
    "ccnl": "impianti fune",
