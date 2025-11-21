@@ -563,7 +563,7 @@
  {
    "azienda": "ENEL",
    "sede": "Verbania",
-   "Indirizzo": "SARDA PINS SRL",
+   "Indirizzo": "Via Giovanni Canna, 5",
    "Sito": "https://www.enel.com/it",
    "ccnl": "elettrico",
    "Addetti": "50+",
@@ -573,8 +573,8 @@
  },
  {
    "azienda": "ENEL GREEN POWER S.P.A.",
-   "sede": "",
-   "Indirizzo": "",
+   "sede": "Verbania",
+   "Indirizzo": "Via Giovanni Canna, 5",
    "Sito": "",
    "ccnl": "acqua-gas",
    "Addetti": "50+",
@@ -584,8 +584,8 @@
  },
  {
    "azienda": "ENEL ITALIA SPA",
-   "sede": "",
-   "Indirizzo": "",
+   "sede": "Verbania",
+   "Indirizzo": "Via Giovanni Canna, 5",
    "Sito": "",
    "ccnl": "elettrico",
    "Addetti": "50+",
@@ -595,8 +595,8 @@
  },
  {
    "azienda": "ENEL PRODUZIONE SPA",
-   "sede": "",
-   "Indirizzo": "",
+   "sede": "Verbania",
+   "Indirizzo": "Via Giovanni Canna, 5",
    "Sito": "",
    "ccnl": "elettrico",
    "Addetti": "50+",
@@ -606,8 +606,8 @@
  },
  {
    "azienda": "ENEL SERVIZIO ELETTRICO S.P.A.",
-   "sede": "",
-   "Indirizzo": "",
+   "sede": "Verbania",
+   "Indirizzo": "Via Giovanni Canna, 5",
    "Sito": "",
    "ccnl": "acqua-gas",
    "Addetti": "50+",
@@ -617,8 +617,8 @@
  },
  {
    "azienda": "ENEL SOLE SRL",
-   "sede": "",
-   "Indirizzo": "",
+   "sede": "Verbania",
+   "Indirizzo": "Via Giovanni Canna, 5",
    "Sito": "",
    "ccnl": "edilizia",
    "Addetti": "50+",
@@ -628,14 +628,14 @@
  },
  {
    "azienda": "ENI REWIND SPA",
-   "sede": "Verbania",
-   "Indirizzo": "",
+   "sede": "San Donato Milanese",
+   "Indirizzo": "Piazza Boldrini, 1",
    "Sito": "https://www.eni.com/enirewind/it-IT/home.html",
    "ccnl": "chimica",
    "Addetti": "50+",
    "Macroaree": "Informatica, chimica, meccanica, elettronica ",
    "paese": "Italia",
-   "provincia": "Verbano-Cusio-ossola"
+   "provincia": "Milano"
  },
  {
    "azienda": "ERREMME SRL",
@@ -926,7 +926,7 @@
  {
    "azienda": "IN ENERGY GAS & POWER SRL",
    "sede": "Verbania",
-   "Indirizzo": "",
+   "Indirizzo": "Via 42 Martiri, 165",
    "Sito": "https://www.in-energy.it/",
    "ccnl": "acqua-gas",
    "Addetti": "0-15",
@@ -1058,7 +1058,7 @@
  {
    "azienda": "MANZONI SRL",
    "sede": "Verbania",
-   "Indirizzo": "Via dell’Industria, 14",
+   "Indirizzo": "Via dell'Industria, 14",
    "Sito": "https://manzoniengineering.com/",
    "ccnl": "metalmecc.",
    "Addetti": "15-50",
@@ -1245,7 +1245,7 @@
  {
    "azienda": "POSTE ITALIANE S.P.A.",
    "sede": "Verbania",
-   "Indirizzo": "",
+   "Indirizzo": "Piazza Gramsci Antonio, 1",
    "Sito": "https://www.poste.it/",
    "ccnl": "telecomunic",
    "Addetti": "50+",
@@ -1355,7 +1355,7 @@
  {
    "azienda": "SAN DOMENICO SKI SRL",
    "sede": "Varzo",
-   "Indirizzo": "",
+   "Indirizzo": "Str. S. Domenico, 5",
    "Sito": "https://www.san-domenico.com/it",
    "ccnl": "impianti fune",
    "Addetti": "0-15",
@@ -1771,9 +1771,9 @@
    "provincia": "Verbano-Cusio-ossola"
  },
  {
-   "azienda": "ZACCHERA HOTELS SRL (grand hotel Bristol e grand hotel Dino) ",
+   "azienda": "ZACCHERA HOTELS SRL (grand hotel Bristol e grand hotel Dino)",
    "sede": "Stresa-Baveno",
-   "Indirizzo": "",
+   "Indirizzo": "Corso Garibaldi 20",
    "Sito": "https://zaccherahotels.com/",
    "ccnl": "turismo",
    "Addetti": "50+",
