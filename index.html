@@ -31,7 +31,7 @@ async function geocodeAddress(address) {
 
 // --- CARICA DATI ---
 async function caricaDati() {
-    const response = await fetch("aziende_cobianchi.json");
+    const response = await fetch("aziende_cobianchi_geo.json");
     aziende = await response.json();
 }
 </script>
