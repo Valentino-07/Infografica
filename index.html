@@ -107,9 +107,35 @@ function filtraAziende() {
 }
 
 function mostraLista(lista) {
-    document.getElementById("listaAziende").innerHTML = lista.map(a => `
-        <li><a href="${a.Sito}" target="_blank">${a.azienda}</a> — ${a.sede}</li>
-    `).join("");
+    // Filtra in base al numero di dipendenti
+    const grandi = lista.filter(a => Number(a.Addetti) > 50);
+    const medie  = lista.filter(a => Number(a.Addetti) >= 15 && Number(a.Addetti) <= 50);
+    const piccole = lista.filter(a => Number(a.Addetti) < 15);
+
+    let html = "";
+
+    if (grandi.length > 0) {
+        html += `<h2>Aziende con più di 50 dipendenti</h2>`;
+        html += grandi.map(a => `
+            <li><a href="${a.Sito}" target="_blank">${a.azienda}</a> — ${a.sede}</li>
+        `).join("");
+    }
+
+    if (medie.length > 0) {
+        html += `<h2>Aziende con 15–50 dipendenti</h2>`;
+        html += medie.map(a => `
+            <li><a href="${a.Sito}" target="_blank">${a.azienda}</a> — ${a.sede}</li>
+        `).join("");
+    }
+
+    if (piccole.length > 0) {
+        html += `<h2>Aziende con meno di 15 dipendenti</h2>`;
+        html += piccole.map(a => `
+            <li><a href="${a.Sito}" target="_blank">${a.azienda}</a> — ${a.sede}</li>
+        `).join("");
+    }
+
+    document.getElementById("listaAziende").innerHTML = html;
 }
 
 function pulisciMarkers() {
